@@ -96,7 +96,7 @@ LRESULT CALLBACK WndProcMain(HWND hWnd, UINT messages, WPARAM wParam, LPARAM lPa
             return 0;
         char str[20];
         _itoa(j + 1, str, 10);
-        strcat(str, "-е окно");
+        strcat(str, " Window");
         hwnds[j] = CreateWindow(lpszNameClassPopup, str, WS_POPUPWINDOW | WS_CAPTION | WS_VISIBLE,
             left + cxClient - Width - xStep * j, top + cyClient - Height - yStep * j,
             Width, Height, hWnd, 0, hInstance, NULL);
