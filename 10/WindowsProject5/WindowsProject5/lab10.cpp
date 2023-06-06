@@ -13,21 +13,21 @@ static HINSTANCE hInst;
 
 HACCEL hAccel = LoadAccelerators(hInst, MAKEINTRESOURCE(IDR_ACCELERATOR5));
 
-// объявление функций
+// РѕР±СЉСЏРІР»РµРЅРёРµ С„СѓРЅРєС†РёР№
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 ATOM RegMyWindowClass(HINSTANCE, LPCTSTR);
 
-// функция вхождений программы WinMain
+// С„СѓРЅРєС†РёСЏ РІС…РѕР¶РґРµРЅРёР№ РїСЂРѕРіСЂР°РјРјС‹ WinMain
 int WINAPI WinMain(HINSTANCE hInstance,
 	HINSTANCE         hPrevInstance,
 	LPSTR             lpCmdLine,
 	int               nCmdShow)
 {
 
-	// имя будущего класса
+	// РёРјСЏ Р±СѓРґСѓС‰РµРіРѕ РєР»Р°СЃСЃР°
 	LPCTSTR lpzClass = TEXT("Window");
 
-	// регистрация класса
+	// СЂРµРіРёСЃС‚СЂР°С†РёСЏ РєР»Р°СЃСЃР°
 	if (!RegMyWindowClass(hInstance, lpzClass))
 		return 1;
 
@@ -40,18 +40,18 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	int cb = LoadString(hInstance, IDS_STRING104, (LPSTR)szWindowName, sizeof(szWindowName));
 	wsprintf((LPSTR)szBuf, (LPSTR)szWindowName);
 
-	// создание диалогового окна
+	// СЃРѕР·РґР°РЅРёРµ РґРёР°Р»РѕРіРѕРІРѕРіРѕ РѕРєРЅР°
 	HWND hWnd = CreateWindow(lpzClass,
 		(LPSTR)szBuf,
 		WS_VISIBLE | WS_SYSMENU | WS_MINIMIZEBOX,
 		x, y, 100 * 5, 50 * 5, NULL, NULL,
 		hInstance, NULL);
 
-	// если окно не создано
+	// РµСЃР»Рё РѕРєРЅРѕ РЅРµ СЃРѕР·РґР°РЅРѕ
 	if (!hWnd) return 2;
 
-	// цикл сообщений приложения
-	MSG msg = { 0 };    // структура сообщения
+	// С†РёРєР» СЃРѕРѕР±С‰РµРЅРёР№ РїСЂРёР»РѕР¶РµРЅРёСЏ
+	MSG msg = { 0 };    // СЃС‚СЂСѓРєС‚СѓСЂР° СЃРѕРѕР±С‰РµРЅРёСЏ
 	
 	while (GetMessage(&msg, NULL, 0, 0)) {
 		if (!TranslateAccelerator(hWnd, hAccel, &msg)) {
@@ -60,40 +60,40 @@ int WINAPI WinMain(HINSTANCE hInstance,
 		}
 	}
 
-	int iGetOk = 0;   // переменная состояния
-	while ((iGetOk = GetMessage(&msg, NULL, 0, 0)) != 0) // цикл сообщений
+	int iGetOk = 0;   // РїРµСЂРµРјРµРЅРЅР°СЏ СЃРѕСЃС‚РѕСЏРЅРёСЏ
+	while ((iGetOk = GetMessage(&msg, NULL, 0, 0)) != 0) // С†РёРєР» СЃРѕРѕР±С‰РµРЅРёР№
 	{
-		if (iGetOk == -1) return 3;  // если GetMessage вернул ошибку - выход
+		if (iGetOk == -1) return 3;  // РµСЃР»Рё GetMessage РІРµСЂРЅСѓР» РѕС€РёР±РєСѓ - РІС‹С…РѕРґ
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 	}
-	return msg.wParam;  // возвращается код завершения программы
+	return msg.wParam;  // РІРѕР·РІСЂР°С‰Р°РµС‚СЃСЏ РєРѕРґ Р·Р°РІРµСЂС€РµРЅРёСЏ РїСЂРѕРіСЂР°РјРјС‹
 }
 
-// функция регистрации класса окон
+// С„СѓРЅРєС†РёСЏ СЂРµРіРёСЃС‚СЂР°С†РёРё РєР»Р°СЃСЃР° РѕРєРѕРЅ
 ATOM RegMyWindowClass(HINSTANCE hInst, LPCTSTR lpzClassName)
 {
 	WNDCLASS wcWindowClass = { 0 };
-	// адрес ф-ции обработки сообщений
+	// Р°РґСЂРµСЃ С„-С†РёРё РѕР±СЂР°Р±РѕС‚РєРё СЃРѕРѕР±С‰РµРЅРёР№
 	wcWindowClass.lpfnWndProc = (WNDPROC)WndProc;
-	// стиль окна
+	// СЃС‚РёР»СЊ РѕРєРЅР°
 	wcWindowClass.style = CS_HREDRAW | CS_VREDRAW;
-	// дискриптор экземпляра приложения
+	// РґРёСЃРєСЂРёРїС‚РѕСЂ СЌРєР·РµРјРїР»СЏСЂР° РїСЂРёР»РѕР¶РµРЅРёСЏ
 	wcWindowClass.hInstance = hInst;
-	// название класса
+	// РЅР°Р·РІР°РЅРёРµ РєР»Р°СЃСЃР°
 	wcWindowClass.lpszClassName = lpzClassName;
-	// загрузка курсора
+	// Р·Р°РіСЂСѓР·РєР° РєСѓСЂСЃРѕСЂР°
 	wcWindowClass.hCursor = LoadCursor(NULL, MAKEINTRESOURCE(IDB_PNG1));
-	// курсор
+	// РєСѓСЂСЃРѕСЂ
 	wcWindowClass.hIcon = LoadIcon(hInst, MAKEINTRESOURCE(IDI_ICON1));
-	// иконка
+	// РёРєРѕРЅРєР°
 	wcWindowClass.hbrBackground = (HBRUSH)CreateSolidBrush(RGB(255, 255, 255));
-	// цвет фона экрана
+	// С†РІРµС‚ С„РѕРЅР° СЌРєСЂР°РЅР°
 	return RegisterClass(&wcWindowClass);
-	// регистрация класса
+	// СЂРµРіРёСЃС‚СЂР°С†РёСЏ РєР»Р°СЃСЃР°
 }
 
-// функция обработки сообщений
+// С„СѓРЅРєС†РёСЏ РѕР±СЂР°Р±РѕС‚РєРё СЃРѕРѕР±С‰РµРЅРёР№
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	HDC hdc, hCompatibleDC;
@@ -154,31 +154,31 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		_itoa(x, buf, 10);
 		_itoa(y, buf2, 10);
 
-		// _itoa - преоброзвание целого числа в строку
+		// _itoa - РїСЂРµРѕР±СЂРѕР·РІР°РЅРёРµ С†РµР»РѕРіРѕ С‡РёСЃР»Р° РІ СЃС‚СЂРѕРєСѓ
 		/*
 		x, y
-		Число, которое требуется преобразовать.
+		Р§РёСЃР»Рѕ, РєРѕС‚РѕСЂРѕРµ С‚СЂРµР±СѓРµС‚СЃСЏ РїСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ.
 
 		buf, buf2
-		Буфер, содержащий результат преобразования.
+		Р‘СѓС„РµСЂ, СЃРѕРґРµСЂР¶Р°С‰РёР№ СЂРµР·СѓР»СЊС‚Р°С‚ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ.
 
 		10
-		База, используемая для преобразования value, которая должна находиться в диапазоне от 2 до 36.
+		Р‘Р°Р·Р°, РёСЃРїРѕР»СЊР·СѓРµРјР°СЏ РґР»СЏ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ value, РєРѕС‚РѕСЂР°СЏ РґРѕР»Р¶РЅР° РЅР°С…РѕРґРёС‚СЊСЃСЏ РІ РґРёР°РїР°Р·РѕРЅРµ РѕС‚ 2 РґРѕ 36.
 		*/
 
 		InvalidateRect(hWnd, NULL, TRUE);
-		// Функция InvalidateRect добавляет прямоугольник к обновляемому региону заданного окна. Обновляемый регион представляет часть рабочей области окна, которая должна быть перерисована.
-		//	hWnd - дескриптор окна
-		//	NULL - координаты прямоугольника
-		//	TRUE-  состояние очистки
+		// Р¤СѓРЅРєС†РёСЏ InvalidateRect РґРѕР±Р°РІР»СЏРµС‚ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє Рє РѕР±РЅРѕРІР»СЏРµРјРѕРјСѓ СЂРµРіРёРѕРЅСѓ Р·Р°РґР°РЅРЅРѕРіРѕ РѕРєРЅР°. РћР±РЅРѕРІР»СЏРµРјС‹Р№ СЂРµРіРёРѕРЅ РїСЂРµРґСЃС‚Р°РІР»СЏРµС‚ С‡Р°СЃС‚СЊ СЂР°Р±РѕС‡РµР№ РѕР±Р»Р°СЃС‚Рё РѕРєРЅР°, РєРѕС‚РѕСЂР°СЏ РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РїРµСЂРµСЂРёСЃРѕРІР°РЅР°.
+		//	hWnd - РґРµСЃРєСЂРёРїС‚РѕСЂ РѕРєРЅР°
+		//	NULL - РєРѕРѕСЂРґРёРЅР°С‚С‹ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР°
+		//	TRUE-  СЃРѕСЃС‚РѕСЏРЅРёРµ РѕС‡РёСЃС‚РєРё
 
 		return 0;
 	}
 
 	case WM_PAINT:
 	{ 
-		GetClientRect(hWnd, &Rect);//Получение информации о рабочей области окна
-		hdc = BeginPaint(hWnd, &ps);//Получение хендла контекста устройства
+		GetClientRect(hWnd, &Rect);//РџРѕР»СѓС‡РµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё Рѕ СЂР°Р±РѕС‡РµР№ РѕР±Р»Р°СЃС‚Рё РѕРєРЅР°
+		hdc = BeginPaint(hWnd, &ps);//РџРѕР»СѓС‡РµРЅРёРµ С…РµРЅРґР»Р° РєРѕРЅС‚РµРєСЃС‚Р° СѓСЃС‚СЂРѕР№СЃС‚РІР°
 
 		TextOut(hdc, 20, 0, "xPos = ", 10); // 20, 0,
 		TextOut(hdc, 70, 0, buf, strlen(buf)); // 70, 0
