@@ -128,9 +128,9 @@ LRESULT CALLBACK WndProc(
 		_itoa(counterB, buf1, 10);
 		_itoa(counterC, buf2, 10);
 
-		TextOut(hdc, 20, 20, "Ïîòîê A: count = ", 20);
-		TextOut(hdc, 20, 60, "Ïîòîê B: count = ", 20);
-		TextOut(hdc, 20, 100, "Ïîòîê C: count = ", 20);
+		TextOut(hdc, 20, 20, "Thread A: count = ", 20);
+		TextOut(hdc, 20, 60, "Thread B: count = ", 20);
+		TextOut(hdc, 20, 100, "Thread C: count = ", 20);
 		TextOut(hdc, 130, 20, buf, strlen(buf));
 		TextOut(hdc, 130, 60, buf1, strlen(buf1));
 		TextOut(hdc, 130, 100, buf2, strlen(buf2));
