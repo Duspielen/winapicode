@@ -1,0 +1,8 @@
+﻿  Source.cpp
+C:\Users\crimi\OneDrive\Документы\СП\10\WindowsProject5\WindowsProject5\Source.cpp(70,12): warning C4244: return: преобразование "WPARAM" в "int", возможна потеря данных
+C:\Users\crimi\OneDrive\Документы\СП\10\WindowsProject5\WindowsProject5\Source.cpp(184,34): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\crimi\OneDrive\Документы\СП\10\WindowsProject5\WindowsProject5\Source.cpp(186,36): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\crimi\OneDrive\Документы\СП\10\WindowsProject5\WindowsProject5\Source.cpp(192,36): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\crimi\OneDrive\Документы\СП\10\WindowsProject5\WindowsProject5\Source.cpp(102,9): warning C4101: hOldBitmap: неиспользованная локальная переменная
+C:\Users\crimi\OneDrive\Документы\СП\10\WindowsProject5\WindowsProject5\Source.cpp(99,11): warning C4101: hCompatibleDC: неиспользованная локальная переменная
+  WindowsProject5.vcxproj -> C:\Users\crimi\OneDrive\Документы\СП\10\WindowsProject5\x64\Debug\WindowsProject5.exe
