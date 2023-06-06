@@ -128,9 +128,9 @@ LRESULT CALLBACK WndProc(
 		_itoa(counterB, buf1, 10);
 		_itoa(counterC, buf2, 10);
 
-		TextOut(hdc, 20, 20, "Поток A: count = ", 20);
-		TextOut(hdc, 20, 60, "Поток B: count = ", 20);
-		TextOut(hdc, 20, 100, "Поток C: count = ", 20);
+		TextOut(hdc, 20, 20, "ГЏГ®ГІГ®ГЄ A: count = ", 20);
+		TextOut(hdc, 20, 60, "ГЏГ®ГІГ®ГЄ B: count = ", 20);
+		TextOut(hdc, 20, 100, "ГЏГ®ГІГ®ГЄ C: count = ", 20);
 		TextOut(hdc, 130, 20, buf, strlen(buf));
 		TextOut(hdc, 130, 60, buf1, strlen(buf1));
 		TextOut(hdc, 130, 100, buf2, strlen(buf2));
