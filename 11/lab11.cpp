@@ -243,32 +243,3 @@ LRESULT CALLBACK WndProc(
 	}
 	return DefWindowProc(hwnd, msg, wParam, lParam);
 }
-
-//BOOL CALLBACK AboutDlgProc(
-//	HWND hDlg,
-//	UINT uMsg,
-//	WPARAM wParam,
-//	LPARAM IParam)
-//{
-//	switch (uMsg)
-//	{
-//	case WM_COMMAND:
-//		switch (LOWORD(wParam))
-//		{
-//		case WM_INITDIALOG: //èíèöèàëèçàöèÿ äèàëîãà
-//			return TRUE;
-//
-//		case WM_COMMAND:
-//			switch (LOWORD(wParam)) {
-//
-//				MessageBox(hDlg, "test", "Message", MB_OK);
-//				return 0;
-//			}
-//
-//		case IDCANCEL:
-//			EndDialog(hDlg, wParam);
-//			return TRUE;
-//		}
-//	}
-//	return FALSE;
-//}
