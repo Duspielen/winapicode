@@ -21,7 +21,7 @@ int WINAPI WinMain(
 	HWND hwnd;
 	WNDCLASS wc;
 
-	//регистрация окна
+	//Г°ГҐГЈГЁГ±ГІГ°Г Г¶ГЁГї Г®ГЄГ­Г 
 	wc.style = CS_HREDRAW | CS_VREDRAW;
 	wc.cbClsExtra = wc.cbWndExtra = 0;
 	wc.lpfnWndProc = WndProc;
@@ -39,7 +39,7 @@ int WINAPI WinMain(
 	}
 
 	hInst = hInstance;
-	//создание окна
+	//Г±Г®Г§Г¤Г Г­ГЁГҐ Г®ГЄГ­Г 
 	hwnd = CreateWindow(
 		"WindowsClass",
 		"Select...",
@@ -84,14 +84,14 @@ LRESULT CALLBACK WndProc(
 	WIN32_FIND_DATA wfd;
 	HANDLE f;
 
-	f = FindFirstFile(LPCSTR("D:/*"), &wfd);  // путь к файлу
+	f = FindFirstFile(LPCSTR("D:/*"), &wfd);  // ГЇГіГІГј ГЄ ГґГ Г©Г«Гі
 
 	switch (msg)
 	{
 
 	case WM_CREATE:
 	{
-		// создание листа
+		// Г±Г®Г§Г¤Г Г­ГЁГҐ Г«ГЁГ±ГІГ 
 		hListBox = CreateWindow(
 			"listBox",
 			NULL,
@@ -103,7 +103,7 @@ LRESULT CALLBACK WndProc(
 			hInst,
 			NULL);
 
-		// поиск файла
+		// ГЇГ®ГЁГ±ГЄ ГґГ Г©Г«Г 
 		if (INVALID_HANDLE_VALUE != f)
 		{
 			do
@@ -114,7 +114,7 @@ LRESULT CALLBACK WndProc(
 		}
 
 		InvalidateRect(hListBox, NULL, TRUE);
-		//кнопки
+		//ГЄГ­Г®ГЇГЄГЁ
 		hButton = CreateWindow(
 			"button",
 			"OK",
@@ -194,7 +194,7 @@ LRESULT CALLBACK WndProc(
 				}
 			}
 		}
-		//обработка кнопки
+		//Г®ГЎГ°Г ГЎГ®ГІГЄГ  ГЄГ­Г®ГЇГЄГЁ
 		else if (wParam == 2)
 		{
 			int uSelectItem;
@@ -255,7 +255,7 @@ LRESULT CALLBACK WndProc(
 //	case WM_COMMAND:
 //		switch (LOWORD(wParam))
 //		{
-//		case WM_INITDIALOG: //инициализация диалога
+//		case WM_INITDIALOG: //ГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї Г¤ГЁГ Г«Г®ГЈГ 
 //			return TRUE;
 //
 //		case WM_COMMAND:
