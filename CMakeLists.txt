@@ -7,5 +7,3 @@ add_executable(untitled main.cpp main2.cpp)
 
 # Добавление связи с библиотекой comctl32
 target_link_libraries(untitled comctl32)
-
-commit
