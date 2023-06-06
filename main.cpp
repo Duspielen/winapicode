@@ -164,3 +164,4 @@ std::string FormatParagraphs(const std::string& text)
 }
 
 // what the fuck?
+// bless
