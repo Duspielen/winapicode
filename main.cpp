@@ -162,6 +162,3 @@ std::string FormatParagraphs(const std::string& text)
 
     return formattedText;
 }
-
-// what the fuck?
-// bless
